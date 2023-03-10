@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+  {% block content %}
+    <!-- Container used to display everything beneath the nav bar -->
+    <div class="container">
+      <div class="row justify-content-center my-3">
+        <h1 class="text-white font-weight-bold">Movies To Watch</h1> <!-- Header of the page -->
+      </div>
+      <!-- div used to contain the table and card that houses the table -->
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card bg-dark shadow-2-strong" style="border-radius: .5rem;">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-borderless mb-0 table-hover text-white">
+                  <!-- Table header row and it's columns -->
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Runtime</th>
+                      <th scope="col">Genre</th>
+                      <th scope="col">Watched?</th>
+                    </tr>
+                  </thead>
+                  <!-- Table body that is dynamically updated with the contents of the movie table where the movies have not been marked as seen -->
+                  <tbody>
+                    {% for item in items %}
+                    <tr>
+                      <td>{{item[1]}}</td>
+                      <td>{{item[2]}}</td>
+                      <td>{{item[3]}}</td>
+                      <td>{{item[4]}}</td>
+                      <td class="d-flex justify-content-center">
+                        <!-- Button used to update the watched table and mark a movie as seen. It also calls the changeState() function to update the button on click -->
+                        <form action="{{ url_for('flip') }}" method="post">
+                          <input type="hidden" name="flip" value="{{ item.movieId }}"/>
+                          <input type="submit" class="btn mb-0 mr-0 btn-light" value="Mark as watched" id="movie-{{ item.movieId }}" onclick="changeState(this.id)"/>
+                        </form>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}

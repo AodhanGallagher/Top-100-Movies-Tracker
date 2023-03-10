@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+  {% block content %}
+    <!-- Container used to display everything beneath the nav bar -->
+    <div class="container">
+      <div class="row justify-content-center mb-2 mt-3">
+        <h1 class="text-white font-weight-bold">Login</h1> <!-- Header of the page -->
+      </div>
+      <!-- div used to contain the login form -->
+      <div class="row justify-content-center">
+        <div class="col-6 bg-dark text-white rounded pt-3 px-4">
+          <!-- Code used to display error messages (from views.py) -->
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="alert alert-danger">
+                {{ messages[0] }}
+              </div>
+            {% endif %}
+          {% endwith %}
+          <form form action="/login" method="post" name="login">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+              {{ form.loginUsername.label }}
+              {{ form.loginUsername(class_="form-control") }}
+            </div>
+            <div class="form-group">
+              {{ form.loginPassword.label }}
+              {{ form.loginPassword(class_="form-control") }}
+            </div>
+            <div class="field">
+              <label class="checkbox">
+                  <input type="checkbox" name="remember">
+                  Remember me
+              </label>
+            </div>
+            <p><input class="mt-2" type=submit value=Login></p>
+          </form>
+          <!-- Displays a message if there are any errors -->
+          {% if error %}
+			      <p class="error"><strong>Error:</strong>{{error}}</p>
+		      {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}

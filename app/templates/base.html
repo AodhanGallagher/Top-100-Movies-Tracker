@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <script type="text/javascript" src="static/ajaxFunctions.js" ></script>
+      
+      <!-- Cookie Consent by InSites -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+      <!-- Handles the title of the current page being displayed -->
+      {% if title %}
+        <title>{{ title }}</title>
+      {% else %}
+        <title> No title specified</title>
+      {% endif %}
+    </head>
+
+    <body style="background: linear-gradient(to right, rgba(255, 216, 155, 1), rgba(25, 84, 123, 1))">
+      <!-- Navigation bar -->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Movie Tracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Movies Overview<span class="sr-only">(current)</span></a></li>
+            <!-- Only appears if the user is logged in -->
+            {% if current_user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="/watchedMovies">Watched Movies</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="/unwatchedMovies">Unwatched Movies</a></li>
+            {% endif %}
+          </ul>
+          <!-- Only appears if the user is not logged in -->
+          {% if not current_user.is_authenticated %}
+            <div class="d-flex">
+              <a class="btn btn-outline-light mr-2 px-3 font-weight-bold" href="/login" role="button">Login</a>
+            </div>
+            <div class="d-flex">
+              <a class="btn btn-light px-3 font-weight-bold" href="/registration" role="button">Sign Up</a>
+            </div>
+          {% endif %}
+          <!-- Only appears if the user is logged in and replaces the buttons to log in and register a user-->
+          {% if current_user.is_authenticated %}
+            <div class="d-flex">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link font-weight-bold" href="/account">Account</a></li>
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </nav>
+
+      <!-- Block content that will be changed on each page of the application -->
+      <div class="d-flex justify-content-center">
+        {% block content %}{% endblock %}
+      </div>
+
+      <!-- Additional JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+      <!-- Script that makes a cookies consent popup appear when a user first visits the website -->
+      <script>
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#252e39"
+            },
+            "button": {
+              "background": "#f4f4f4"
+            }
+          },
+          "theme": "classic",
+          "position": "bottom-left"
+        });
+      </script>
+    </body>
+  </html>

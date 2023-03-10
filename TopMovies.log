@@ -1,0 +1,42 @@
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:15:33] "GET /registration HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:15:33] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:User successfully registered
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:05] "[32mPOST /registration HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:05] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:05] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:User successfully logged in
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:root:account page accessed
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:27] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:27] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:watchedMovies accessed
+INFO:root:Watched table successfully loaded
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:31] "GET /watchedMovies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:31] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:unwatchedMovies accessed
+INFO:root:Unwatched table successfully loaded
+INFO:root:Successfully waited for button state change
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:33] "GET /unwatchedMovies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:33] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:moviesOverview accessed
+INFO:root:Movies table successfully loaded
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:35] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:watchedMovies accessed
+INFO:root:Watched table successfully loaded
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:36] "GET /watchedMovies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:36] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:unwatchedMovies accessed
+INFO:root:Unwatched table successfully loaded
+INFO:root:Successfully waited for button state change
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:39] "GET /unwatchedMovies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:39] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:account page accessed
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:55] "GET /account HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:55] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
+INFO:root:User logged out
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:root:moviesOverview accessed
+INFO:root:Movies table successfully loaded
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:57] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Dec/2022 21:16:57] "[36mGET /static/ajaxFunctions.js HTTP/1.1[0m" 304 -
